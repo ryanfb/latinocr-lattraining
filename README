@@ -6,7 +6,7 @@ https://gitorious.org/ancient-greek-training-for-tesseract
 
 Once built, their directories need to be added to the PATH environment
 variable, e.g.
-$ PATH=$PATH:$HOME/grctrainingtools:$HOME/tesstrainingtools
+  PATH=$PATH:$HOME/grctrainingtools:$HOME/tesstrainingtools
 
 
 # To build an OCR training file
@@ -15,7 +15,7 @@ Note that the build starts by downloading and unpacking the wordlist
 and png/box files.
 
 Make the training with the command:
-$ make
+  make
 
 
 # To manually download the wordlist and png/box files
@@ -38,7 +38,7 @@ do the following:
   and set the PERSEUSDIR variable to the directory you unpacked them.
 
 - Run the command:
-  $ make wordlist
+  make wordlist
 
 # To rebuild the png & box files
 
@@ -51,5 +51,5 @@ following:
   unpack them into a directory called "gfsfonts".
 
 - Run the following commands:
-  $ make garbage
-  $ masstrain-fontdir.sh gfsfonts garbage build/pngbox
+  make garbage
+  masstrain-fontdir.sh gfsfonts garbage build/pngbox
