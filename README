@@ -36,7 +36,8 @@ do the following:
 
 - Download and unpack Perseus' "opensource" corpus from
   http://www.perseus.tufts.edu/hopper/opensource/downloads/texts/hopper-texts-GreekRoman.tar.gz
-  and set the PERSEUSDIR variable to the directory you unpacked them.
+  and set PERSEUSDIR in the Makefile to the directory to which you
+  unpacked them.
 
 - Run the command:
   make wordlist
