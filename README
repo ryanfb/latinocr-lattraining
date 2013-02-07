@@ -1,4 +1,4 @@
-# Build dependencies
+# Dependencies
 
 The tools from the grctrainingtools and tesstrainingtools repositories
 need to be built. Get them from
@@ -27,6 +27,7 @@ can manually download and unpack the following files:
 and make an empty file called "getdeps". You can then run "make" and
 the training will proceed as normal.
 
+
 # To rebuild the word lists
 
 The word lists are generated from Perseus' "opensource" corpus. A
@@ -39,6 +40,7 @@ do the following:
 
 - Run the command:
   make wordlist
+
 
 # To rebuild the png & box files
 
