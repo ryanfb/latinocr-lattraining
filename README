@@ -1,0 +1,55 @@
+# Build dependencies
+
+The tools from the grctrainingtools and tesstrainingtools repositories
+need to be built. Get them from
+https://gitorious.org/ancient-greek-training-for-tesseract
+
+Once built, their directories need to be added to the PATH environment
+variable, e.g.
+$ PATH=$PATH:$HOME/grctrainingtools:$HOME/tesstrainingtools
+
+
+# To build an OCR training file
+
+Note that the build starts by downloading and unpacking the wordlist
+and png/box files.
+
+Make the training with the command:
+$ make
+
+
+# To manually download the wordlist and png/box files
+
+If for some reason the wordlist and png/box file download fails, you
+can manually download and unpack the following files:
+  https://www.dur.ac.uk/nick.white/grctraining/wordlist.bz2
+  https://www.dur.ac.uk/nick.white/grctraining/pngbox.tar.bz2
+and make an empty file called "getdeps". You can then run "make" and
+the training will proceed as normal.
+
+# To rebuild the word lists
+
+The word lists are generated from Perseus' "opensource" corpus. A
+pre-built copy is available (see above for the URL), but to rebuild it
+do the following:
+
+- Download and unpack Perseus' "opensource" corpus from
+  http://www.perseus.tufts.edu/hopper/opensource/downloads/texts/hopper-texts-GreekRoman.tar.gz
+  and set the PERSEUSDIR variable to the directory you unpacked them.
+
+- Run the command:
+  $ make wordlist
+
+# To rebuild the png & box files
+
+The png & box files use fonts from the Greek Font Society. A pre-built
+copy is available (see above for URL), but to rebuild them do the
+following:
+
+- Download all of the OpenType miniscule fonts except "GFS Goschen
+  Cursive" and "GFS Theokritos" from http://greekfontsociety.gr and
+  unpack them into a directory called "gfsfonts".
+
+- Run the following commands:
+  $ make garbage
+  $ masstrain-fontdir.sh gfsfonts garbage build/pngbox
