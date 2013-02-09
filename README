@@ -1,3 +1,6 @@
+Source files for the Ancient Greek (grc) training for Tesseract OCR.
+
+
 # Dependencies
 
 The tools from the grctrainingtools and tesstrainingtools repositories
