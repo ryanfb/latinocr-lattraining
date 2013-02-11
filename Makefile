@@ -1,7 +1,7 @@
 PERSEUSDIR = $HOME/perseus
 
 AMBIGS = \
-	unicharambigs.accentambigs \
+	unicharambigs.accent \
 	unicharambigs.anoteleiaaccent \
 	unicharambigs.breathing \
 	unicharambigs.rho \
@@ -28,6 +28,9 @@ extras/all-words extras/freq-words: wordlist
 garbage: allchars.txt extras/all-words
 	mkdir -p extras
 	makegarbage.sh allchars.txt extras/all-words > $@
+
+unicharambigs.accent:
+	accentambigs > $@
 
 unicharambigs.breathing: charsforambigs.txt
 	breathingambigs $< > $@
