@@ -47,6 +47,6 @@ extras/grc.unicharambigs: $(AMBIGS)
 	cat $(AMBIGS) >> $@
 
 grc.traineddata: getdeps extras/all-words extras/freq-words extras/grc.unicharambigs grc.config number-list punc-list
-	cp grc.config number-list punc-list extras/
+	cp grc.config number-list punc-list font_properties extras/
 	combinetraining-v3.sh pngbox extras
 	echo "Built training file $@"
