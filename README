@@ -49,13 +49,8 @@ do the following:
 # To rebuild the png & box files
 
 The png & box files use fonts from the Greek Font Society. A pre-built
-copy is available (see above for URL), but to rebuild them do the
-following:
-
-- Download all of the OpenType miniscule fonts except "GFS Goschen
-  Cursive" and "GFS Theokritos" from http://greekfontsociety.gr and
-  unpack them into a directory called "gfsfonts".
-
-- Run the following commands:
+copy is available (see above for URL), but to rebuild them run the
+following commands:
+  getfonts.sh gfsfonts
   make garbage
   masstrain-fontdir.sh gfsfonts garbage build/pngbox
