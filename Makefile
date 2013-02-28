@@ -46,7 +46,10 @@ extras/grc.unicharambigs: $(AMBIGS)
 	echo v1 > $@
 	cat $(AMBIGS) >> $@
 
-grc.traineddata: getdeps extras/all-words extras/freq-words extras/grc.unicharambigs grc.config number-list punc-list
-	cp grc.config number-list punc-list font_properties extras/
+extras/grc.config: grc.config
+	sed "2i# Built `date +%F` with `tesseract --version 2>&1|head -n 1`" < $< > $@
+
+grc.traineddata: getdeps extras/all-words extras/freq-words extras/grc.unicharambigs extras/grc.config number-list punc-list
+	cp number-list punc-list font_properties extras/
 	combinetraining-v3.sh pngbox extras
 	echo "Built training file $@"
