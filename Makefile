@@ -1,4 +1,5 @@
 PERSEUSDIR = $(HOME)/perseus
+SEEDS = seed1 seed2 seed3 seed4 seed5
 
 AMBIGS = \
 	unicharambigs.accent \
@@ -25,9 +26,9 @@ extras/all-words extras/freq-words: wordlist
 	mkdir -p extras
 	wordlistparse.sh extras/all-words extras/freq-words < $<
 
-garbage: allchars.txt extras/all-words seed
+garbage: allchars.txt extras/all-words $(SEEDS)
 	mkdir -p extras
-	makegarbage.sh allchars.txt extras/all-words seed > $@
+	makegarbage.sh allchars.txt extras/all-words $(SEEDS) > $@
 
 unicharambigs.accent:
 	accentambigs > $@
@@ -46,7 +47,7 @@ extras/grc.unicharambigs: $(AMBIGS)
 	echo v1 > $@
 	cat $(AMBIGS) >> $@
 
-seed:
+$(SEEDS):
 	dd if=/dev/urandom of=$@ bs=1024 count=1024
 
 extras/grc.config: grc.config
