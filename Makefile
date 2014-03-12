@@ -14,8 +14,8 @@ AMBIGS = \
 all: grc.traineddata
 
 getdeps:
-	curl https://www.dur.ac.uk/nick.white/grctraining/wordlist.bz2 | bzcat > wordlist
-	curl https://www.dur.ac.uk/nick.white/grctraining/pngbox.tar.bz2 | bzcat | tar x
+	curl -L https://community.dur.ac.uk/nick.white/grctraining/wordlist.bz2 | bzcat > wordlist
+	curl -L https://community.dur.ac.uk/nick.white/grctraining/pngbox.tar.bz2 | bzcat | tar x
 	touch $@
 
 wordlist:
