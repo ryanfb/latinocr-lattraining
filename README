@@ -1,4 +1,13 @@
-Source files for the Ancient Greek (grc) training for Tesseract OCR.
+Source files for some automatically generated parts of the Ancient
+Greek (grc) training for Tesseract OCR. Specifically, this contains
+the Makefile and its prerequisites to build the following files
+needed for the grc training:
+
+- training_text.txt
+- grc.word.txt
+- grc.freq.txt
+- grc.unicharambigs
+- grc.wordlist
 
 
 # Dependencies
@@ -12,45 +21,10 @@ variable, e.g.
   PATH=$PATH:$HOME/grctrainingtools:$HOME/tesstrainingtools
 
 
-# To build an OCR training file
+# To build the training parts
 
-Note that the build starts by downloading and unpacking the wordlist
-and png/box files.
+Note that the build starts by downloading and unpacking a text
+corpus from which to generate the wordlists.
 
-Make the training with the command:
+Make all of the parts with the command:
   make
-
-
-# To manually download the wordlist and png/box files
-
-If for some reason the wordlist and png/box file download fails, you
-can manually download and unpack the following files:
-  https://www.dur.ac.uk/nick.white/grctraining/wordlist.bz2
-  https://www.dur.ac.uk/nick.white/grctraining/pngbox.tar.bz2
-and make an empty file called "getdeps". You can then run "make" and
-the training will proceed as normal.
-
-
-# To rebuild the word lists
-
-The word lists are generated from Perseus' "opensource" corpus. A
-pre-built copy is available (see above for the URL), but to rebuild it
-do the following:
-
-- Download and unpack Perseus' "opensource" corpus from
-  http://www.perseus.tufts.edu/hopper/opensource/downloads/texts/hopper-texts-GreekRoman.tar.gz
-  and set PERSEUSDIR in the Makefile to the directory to which you
-  unpacked them.
-
-- Run the command:
-  make wordlist
-
-
-# To rebuild the png & box files
-
-The png & box files use fonts from the Greek Font Society. A pre-built
-copy is available (see above for URL), but to rebuild them run the
-following commands:
-  getfonts.sh gfsfonts
-  make garbage
-  masstrain.sh gfsfonts garbage pngbox

@@ -1,4 +1,4 @@
-PERSEUSDIR = $(HOME)/perseus
+CORPUSURL = http://www.perseus.tufts.edu/hopper/opensource/downloads/texts/hopper-texts-GreekRoman.tar.gz
 
 AMBIGS = \
 	unicharambigs.accent \
@@ -11,23 +11,24 @@ AMBIGS = \
 	unicharambigs.omicronzero \
 	unicharambigs.quoteaccent
 
-all: grc.traineddata
+all: training_text.txt grc.word.txt grc.freq.txt grc.unicharambigs wordlist
 
-getdeps:
-	curl -L https://community.dur.ac.uk/nick.white/grctraining/wordlist.bz2 | bzcat > wordlist
-	curl -L https://community.dur.ac.uk/nick.white/grctraining/pngbox.tar.bz2 | bzcat | tar x
-	touch $@
+corpus:
+	mkdir -p $@
+	cd $@ ; wget -O - $(CORPUSURL) \
+	| zcat | tar x
 
-wordlist:
-	wordlistfromperseus.sh $(PERSEUSDIR) > $@
+wordlist: corpus
+	wordlistfromperseus.sh corpus > $@
 
-extras/all-words extras/freq-words: wordlist
-	mkdir -p extras
-	wordlistparse.sh extras/all-words extras/freq-words < $<
+grc.word.txt grc.freq.txt: wordlist
+	wordlistparse.sh grc.word.txt grc.freq.txt < $<
 
-garbage: allchars.txt extras/all-words seed
-	mkdir -p extras
-	makegarbage.sh allchars.txt extras/all-words seed > $@
+seed:
+	dd if=/dev/urandom of=$@ bs=1024 count=1536
+
+training_text.txt: allchars.txt grc.word.txt seed
+	makegarbage.sh allchars.txt grc.word.txt seed > $@
 
 unicharambigs.accent:
 	accentambigs > $@
@@ -41,15 +42,6 @@ unicharambigs.rho: charsforambigs.txt
 unicharambigs.omicronzero: charsforambigs.txt
 	omicronzeroambigs.sh $< > $@
 
-extras/grc.unicharambigs: $(AMBIGS)
-	mkdir -p extras
+grc.unicharambigs: $(AMBIGS)
 	echo v1 > $@
 	cat $(AMBIGS) >> $@
-
-seed:
-	dd if=/dev/urandom of=$@ bs=1024 count=1536
-
-grc.traineddata: getdeps extras/all-words extras/freq-words extras/grc.unicharambigs number-list punc-list
-	cp number-list punc-list font_properties extras/
-	combinetraining-v3.sh pngbox extras
-	echo "Built training file $@"
