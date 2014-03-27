@@ -49,10 +49,7 @@ extras/grc.unicharambigs: $(AMBIGS)
 seed:
 	dd if=/dev/urandom of=$@ bs=1024 count=1536
 
-extras/grc.config: grc.config
-	sed "2i# Built `date +%F` with `tesseract --version 2>&1|head -n 1`" < $< > $@
-
-grc.traineddata: getdeps extras/all-words extras/freq-words extras/grc.unicharambigs extras/grc.config number-list punc-list
+grc.traineddata: getdeps extras/all-words extras/freq-words extras/grc.unicharambigs number-list punc-list
 	cp number-list punc-list font_properties extras/
 	combinetraining-v3.sh pngbox extras
 	echo "Built training file $@"
