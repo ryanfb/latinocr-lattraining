@@ -1,5 +1,4 @@
 PERSEUSDIR = $(HOME)/perseus
-SEEDS = seed1 seed2 seed3 seed4 seed5
 
 AMBIGS = \
 	unicharambigs.accent \
@@ -26,9 +25,9 @@ extras/all-words extras/freq-words: wordlist
 	mkdir -p extras
 	wordlistparse.sh extras/all-words extras/freq-words < $<
 
-garbage: allchars.txt extras/all-words $(SEEDS)
+garbage: allchars.txt extras/all-words seed
 	mkdir -p extras
-	makegarbage.sh allchars.txt extras/all-words $(SEEDS) > $@
+	makegarbage.sh allchars.txt extras/all-words seed > $@
 
 unicharambigs.accent:
 	accentambigs > $@
@@ -47,8 +46,8 @@ extras/grc.unicharambigs: $(AMBIGS)
 	echo v1 > $@
 	cat $(AMBIGS) >> $@
 
-$(SEEDS):
-	dd if=/dev/urandom of=$@ bs=1024 count=1024
+seed:
+	dd if=/dev/urandom of=$@ bs=1024 count=1536
 
 extras/grc.config: grc.config
 	sed "2i# Built `date +%F` with `tesseract --version 2>&1|head -n 1`" < $< > $@
