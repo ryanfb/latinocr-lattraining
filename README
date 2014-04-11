@@ -12,13 +12,13 @@ needed for the grc training:
 
 # Dependencies
 
-The tools from the grctrainingtools and tesstrainingtools repositories
-need to be built. Get them from
-https://gitorious.org/ancient-greek-training-for-tesseract
+The tools from the grctrainingtools repository need to be built.
+Get them from
+  https://gitorious.org/ancient-greek-training-for-tesseract/grctrainingtools
 
 Once built, their directories need to be added to the PATH environment
 variable, e.g.
-  PATH=$PATH:$HOME/grctrainingtools:$HOME/tesstrainingtools
+  PATH=$PATH:/path/to/grctrainingtools
 
 
 # To build the training parts
