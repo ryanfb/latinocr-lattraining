@@ -22,7 +22,7 @@ wordlist: corpus
 	wordlistfromperseus.sh corpus > $@
 
 grc.word.txt grc.freq.txt: wordlist
-	wordlistparse.sh grc.word.txt grc.freq.txt < $<
+	wordlistparse.sh grc.word.txt grc.freq.txt < wordlist
 
 seed:
 	dd if=/dev/urandom of=$@ bs=1024 count=1536
