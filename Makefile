@@ -36,13 +36,13 @@ unicharambigs.accent:
 	accentambigs > $@
 
 unicharambigs.breathing: charsforambigs.txt
-	breathingambigs $< > $@
+	breathingambigs charsforambigs.txt > $@
 
 unicharambigs.rho: charsforambigs.txt
-	rhoambigs $< > $@
+	rhoambigs charsforambigs.txt > $@
 
 unicharambigs.omicronzero: charsforambigs.txt
-	omicronzeroambigs.sh $< > $@
+	omicronzeroambigs.sh charsforambigs.txt > $@
 
 grc.unicharambigs: $(AMBIGS)
 	echo v1 > $@
