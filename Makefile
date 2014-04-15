@@ -19,7 +19,9 @@ corpus:
 	| zcat | tar x
 
 wordlist: corpus
-	wordlistfromperseus.sh corpus > $@
+	wordlistfromperseus.sh corpus > wordlist-betacode
+	betacode2utf8.sh wordlist-betacode > $@
+	rm wordlist-betacode
 
 grc.word.txt grc.freq.txt: wordlist
 	wordlistparse.sh grc.word.txt grc.freq.txt < wordlist
