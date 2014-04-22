@@ -11,7 +11,7 @@ AMBIGS = \
 	unicharambigs.omicronzero \
 	unicharambigs.quoteaccent
 
-all: training_text.txt grc.word.txt grc.freq.txt grc.unicharambigs wordlist
+all: training_text.txt grc.word.txt grc.unicharambigs wordlist
 
 corpus:
 	mkdir -p $@
@@ -23,7 +23,8 @@ wordlist: corpus
 	betacode2utf8.sh wordlist-betacode > $@
 	rm wordlist-betacode
 
-grc.word.txt grc.freq.txt: wordlist
+# also generates grc.freq.txt
+grc.word.txt: wordlist
 	wordlistparse.sh grc.word.txt grc.freq.txt < wordlist
 
 seed:
