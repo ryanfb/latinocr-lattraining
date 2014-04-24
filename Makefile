@@ -13,7 +13,7 @@ AMBIGS = \
 	unicharambigs.omicronzero \
 	unicharambigs.quoteaccent
 
-all: training_text.txt grc.word.txt grc.unicharambigs
+all: training_text.txt grc.freq.txt grc.word.txt grc.unicharambigs
 
 corpus:
 	mkdir -p $@
@@ -25,9 +25,11 @@ wordlist: tools/wordlistfromperseus.sh tools/betacode2utf8.sh corpus
 	tools/betacode2utf8.sh wordlist-betacode > $@
 	rm wordlist-betacode
 
-# also generates grc.freq.txt
-grc.word.txt: tools/wordlistparse.sh wordlist
-	tools/wordlistparse.sh grc.word.txt grc.freq.txt < wordlist
+grc.freq.txt: tools/wordlistparsefreq.sh wordlist
+	tools/wordlistparsefreq.sh < wordlist > $@
+
+grc.word.txt: tools/wordlistparseword.sh wordlist
+	tools/wordlistparseword.sh < wordlist > $@
 
 seed:
 	dd if=/dev/urandom of=$@ bs=1024 count=1536
@@ -66,5 +68,5 @@ tools/isupper: tools/isupper.c
 clean:
 	rm -f tools/accentambigs tools/breathingambigs tools/rhoambigs tools/isupper
 	rm -f unicharambigs.accent unicharambigs.breathing unicharambigs.rho unicharambigs.omicronzero
-	rm -f training_text.txt grc.word.txt grc.freq.txt grc.unicharambigs
+	rm -f training_text.txt grc.freq.txt grc.word.txt grc.unicharambigs
 	rm -rf corpus wordlist wordlist-betacode
