@@ -12,7 +12,6 @@ AMBIGS = \
 	unicharambigs.misc \
 	unicharambigs.omicroniotaalpha \
 	unicharambigs.omicronzero \
-	unicharambigs.sigma \
 	unicharambigs.quoteaccent
 
 all: training_text.txt grc.freq.txt grc.word.txt grc.unicharambigs
@@ -53,9 +52,6 @@ unicharambigs.rho: tools/rhoambigs charsforambigs.txt
 
 unicharambigs.omicronzero: tools/omicronzeroambigs.sh charsforambigs.txt
 	tools/omicronzeroambigs.sh charsforambigs.txt > $@
-
-unicharambigs.sigma: tools/sigmaambigs.sh charsforambigs.txt
-	tools/sigmaambigs.sh charsforambigs.txt > $@
 
 grc.unicharambigs: $(AMBIGS)
 	echo v1 > $@
