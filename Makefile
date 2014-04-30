@@ -5,6 +5,7 @@ UTFSRC = tools/libutf/rune.c tools/libutf/utf.c
 AMBIGS = \
 	unicharambigs.accent \
 	unicharambigs.anoteleiaaccent \
+	unicharambigs.apostrophe \
 	unicharambigs.breathing \
 	unicharambigs.rho \
 	unicharambigs.deltaomicron \
@@ -39,6 +40,9 @@ training_text.txt: tools/makegarbage.sh tools/isupper allchars.txt grc.word.txt 
 
 unicharambigs.accent: tools/accentambigs
 	tools/accentambigs > $@
+
+unicharambigs.apostrophe: tools/apostropheambigs.sh
+	tools/apostropheambigs.sh > $@
 
 unicharambigs.breathing: tools/breathingambigs charsforambigs.txt
 	tools/breathingambigs charsforambigs.txt > $@
