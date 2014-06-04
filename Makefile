@@ -41,9 +41,6 @@ training_text.txt: tools/makegarbage.sh tools/isupper allchars.txt grc.word.txt 
 unicharambigs.accent: tools/accentambigs
 	tools/accentambigs > $@
 
-unicharambigs.apostrophe: tools/apostropheambigs.sh
-	tools/apostropheambigs.sh > $@
-
 unicharambigs.breathing: tools/breathingambigs charsforambigs.txt
 	tools/breathingambigs charsforambigs.txt > $@
 
