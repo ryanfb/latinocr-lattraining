@@ -1,4 +1,4 @@
-Source files for some automatically generated parts of the Ancient
+Source files for some automatically generated parts of the
 Latin (lat) training for Tesseract OCR. Specifically, this contains
 the Makefile and its prerequisites to build the following files
 needed for the lat training:
