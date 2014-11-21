@@ -11,13 +11,10 @@ test $# -ne 1 && echo "$usage" && exit 1
 export LC_ALL=C # ensure reproducable sorting
 
 find "$1" -type f -name '*_gk.xml' | sort | while read i; do
-	# Skip over any texts which contain Latin
-	grep 'Latin' "$i" >/dev/null 2>&1
-	test $? -eq 0 && continue
-
 	# Strip XML, separate by word, and feed through tlgu
 	# Note this betacode is lowercase, so we uppercase it for tlgu's sake
 	cat "$i" \
+	| perl -pe 's|<foreign.*?</foreign>||g' \
 	| gsed '1,/<body>/ d; /<\/body>/,$ d' \
 	| gsed 's/<[^>]*>//g; s/\&[^;]*;//g' \
 	| awk '{for(i=1;i<=NF;i++) {printf("%s\n", $i)}}' \
