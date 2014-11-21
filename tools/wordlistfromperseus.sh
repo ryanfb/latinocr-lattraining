@@ -3,16 +3,15 @@
 
 usage="Usage: $0 perseusdir
 
-Outputs a list of all Greek words encountered in a Perseus
+Outputs a list of all Latin words encountered in a Perseus
 corpus, with their frequency."
 
 test $# -ne 1 && echo "$usage" && exit 1
 
 export LC_ALL=C # ensure reproducable sorting
 
-find "$1" -type f -name '*_gk.xml' | sort | while read i; do
-	# Strip XML, separate by word, and feed through tlgu
-	# Note this betacode is lowercase, so we uppercase it for tlgu's sake
+find "$1" -type f -name '*_lat.xml' | sort | while read i; do
+	# Strip XML, separate by word
 	cat "$i" \
 	| perl -pe 's|<foreign.*?</foreign>||g' \
 	| sed '1,/<body>/ d; /<\/body>/,$ d' \
@@ -20,6 +19,5 @@ find "$1" -type f -name '*_gk.xml' | sort | while read i; do
 	| awk '{for(i=1;i<=NF;i++) {printf("%s\n", $i)}}' \
 	| sed '/[0-9]/d; /\[/d; /\]/d' \
 	| sed '/[!?"“”<>\r]/d' \
-	| sed '/†/d; /ϝ/d' \
-	| tr a-z A-Z
+	| sed '/†/d; /ϝ/d'
 done

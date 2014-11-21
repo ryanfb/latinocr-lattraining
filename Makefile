@@ -14,29 +14,27 @@ AMBIGS = \
 	unicharambigs.omicronzero \
 	unicharambigs.quoteaccent
 
-all: training_text.txt grc.freq.txt grc.word.txt grc.unicharambigs
+all: training_text.txt lat.freq.txt lat.word.txt lat.unicharambigs
 
 corpus:
 	mkdir -p $@
 	cd $@ ; wget -O - $(CORPUSURL) \
 	| zcat | tar x
 
-wordlist: tools/wordlistfromperseus.sh tools/betacode2utf8.sh corpus
-	tools/wordlistfromperseus.sh corpus > wordlist-betacode
-	tools/betacode2utf8.sh wordlist-betacode > $@
-	rm wordlist-betacode
+wordlist: tools/wordlistfromperseus.sh corpus
+	tools/wordlistfromperseus.sh corpus > $@
 
-grc.freq.txt: tools/wordlistparsefreq.sh wordlist
+lat.freq.txt: tools/wordlistparsefreq.sh wordlist
 	tools/wordlistparsefreq.sh < wordlist > $@
 
-grc.word.txt: tools/wordlistparseword.sh wordlist
+lat.word.txt: tools/wordlistparseword.sh wordlist
 	tools/wordlistparseword.sh < wordlist > $@
 
 seed:
 	dd if=/dev/urandom of=$@ bs=1024 count=1536
 
-training_text.txt: tools/makegarbage.sh tools/isupper allchars.txt grc.word.txt seed
-	tools/makegarbage.sh allchars.txt grc.word.txt seed > $@
+training_text.txt: tools/makegarbage.sh tools/isupper allchars.txt lat.word.txt seed
+	tools/makegarbage.sh allchars.txt lat.word.txt seed > $@
 
 unicharambigs.accent: tools/accentambigs
 	tools/accentambigs > $@
@@ -50,7 +48,7 @@ unicharambigs.rho: tools/rhoambigs charsforambigs.txt
 unicharambigs.omicronzero: tools/omicronzeroambigs.sh charsforambigs.txt
 	tools/omicronzeroambigs.sh charsforambigs.txt > $@
 
-grc.unicharambigs: $(AMBIGS)
+lat.unicharambigs: $(AMBIGS)
 	echo v1 > $@
 	cat $(AMBIGS) >> $@
 
@@ -69,5 +67,5 @@ tools/isupper: tools/isupper.c
 clean:
 	rm -f tools/accentambigs tools/breathingambigs tools/rhoambigs tools/isupper
 	rm -f unicharambigs.accent unicharambigs.breathing unicharambigs.rho unicharambigs.omicronzero
-	rm -f training_text.txt grc.freq.txt grc.word.txt grc.unicharambigs
+	rm -f training_text.txt lat.freq.txt lat.word.txt lat.unicharambigs
 	rm -rf corpus wordlist wordlist-betacode
