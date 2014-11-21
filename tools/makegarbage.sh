@@ -15,7 +15,7 @@ charlist="$1"
 wordlist="$2"
 seed="$3"
 
-tmpseed=`mktemp`
+tmpseed=`gmktemp`
 seednum=0
 
 # make a new random seed by copying a different chunk of the seed file
@@ -25,15 +25,15 @@ for i in `seq $repeat`; do
 	# change the random seed by copying the start of the original seed to a different part of it
 	seednum=`expr $seednum + 1`
 	dd if="$seed" of="$tmpseed" bs=1 count=1024 skip=$seednum conv=notrunc 2> /dev/null
-	shuf --random-source="$tmpseed" "$charlist" | while read a; do
+	gshuf --random-source="$tmpseed" "$charlist" | while read a; do
 
 		# change the random seed by copying the start of the original seed to a different part of it
 		seednum=`expr $seednum + 1`
 		dd if="$seed" of="$tmpseed" bs=1 count=1024 skip=$seednum conv=notrunc 2> /dev/null
-		words=`shuf --random-source="$tmpseed" < "$wordlist" | grep "$a" 2>/dev/null`
+		words=`gshuf --random-source="$tmpseed" < "$wordlist" | grep "$a" 2>/dev/null`
 
 		if test $? -eq 0; then
-			word=`echo "$words" | sed 1q`
+			word=`echo "$words" | gsed 1q`
 			# . will match anything, so just print it at end of a random word
 			if test "$a" = "."; then
 				echo "$word" | awk '{printf "%s. ", $1}'
@@ -54,7 +54,7 @@ for i in `seq $repeat`; do
 				seednum=`expr $seednum + 1`
 				dd if="$seed" of="$tmpseed" bs=1 count=1024 skip=$seednum conv=notrunc 2> /dev/null
 
-				word=`shuf --random-source="$tmpseed" < "$wordlist" | sed 1q`
+				word=`gshuf --random-source="$tmpseed" < "$wordlist" | gsed 1q`
 				echo "$word" | awk '{printf "%s ", $1}'
 			else
 				echo "$a" | awk '{printf "%s", $1}'

@@ -8,4 +8,4 @@ betacode not converted."
 
 test "$1" = "-h" && echo "$usage" && exit 1
 
-tlgu $@ 2>/dev/null | sed -e 's/[*0\.,:;_\(\)\/=\\|&@-]//g' -e "s/'/’/g" -e '/^$/d' -e '/^ $/d' -e '/^’/d'
+tlgu $@ 2>/dev/null | gsed -e 's/[*0\.,:;_\(\)\/=\\|&@-]//g' -e "s/'/’/g" -e '/^$/d' -e '/^ $/d' -e '/^’/d'

@@ -18,11 +18,11 @@ find "$1" -type f -name '*_gk.xml' | sort | while read i; do
 	# Strip XML, separate by word, and feed through tlgu
 	# Note this betacode is lowercase, so we uppercase it for tlgu's sake
 	cat "$i" \
-	| sed '1,/<body>/ d; /<\/body>/,$ d' \
-	| sed 's/<[^>]*>//g; s/\&[^;]*;//g' \
+	| gsed '1,/<body>/ d; /<\/body>/,$ d' \
+	| gsed 's/<[^>]*>//g; s/\&[^;]*;//g' \
 	| awk '{for(i=1;i<=NF;i++) {printf("%s\n", $i)}}' \
-	| sed '/[0-9]/d; /\[/d; /\]/d' \
-	| sed '/[!?"“”<>\r]/d' \
-	| sed '/†/d; /ϝ/d' \
+	| gsed '/[0-9]/d; /\[/d; /\]/d' \
+	| gsed '/[!?"“”<>\r]/d' \
+	| gsed '/†/d; /ϝ/d' \
 	| tr a-z A-Z
 done
