@@ -1,20 +1,16 @@
 Source files for some automatically generated parts of the Ancient
-Greek (grc) training for Tesseract OCR. Specifically, this contains
+Latin (lat) training for Tesseract OCR. Specifically, this contains
 the Makefile and its prerequisites to build the following files
-needed for the grc training:
+needed for the lat training:
 
 - training_text.txt
-- grc.word.txt
-- grc.freq.txt
-- grc.unicharambigs
-- grc.wordlist
+- lat.word.txt
+- lat.freq.txt
+- lat.unicharambigs
+- lat.wordlist
 
 
 # Dependencies
-
-The tool tlgu is required. Download and install it from:
-  http://tlgu.carmen.gr/
-
 
 # To build the training parts
 
