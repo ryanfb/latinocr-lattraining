@@ -18,6 +18,6 @@ find "$1" -type f -name '*_lat.xml' | sort | while read i; do
 	| gsed 's/<[^>]*>//g; s/\&[^;]*;//g' \
 	| awk '{for(i=1;i<=NF;i++) {printf("%s\n", $i)}}' \
 	| gsed '/[0-9]/d; /\[/d; /\]/d' \
-	| gsed '/[!?"“”<>\r]/d' \
-	| gsed '/†/d; /ϝ/d'
+	| gsed '/[-\/'"'"'@(){}=~|½£«+*;,.:!?"“”<>ое\r]/d' \
+	| gsed '/καὶ/d'
 done
