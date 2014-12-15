@@ -24,12 +24,12 @@ cp "$seed" "$tmpseed"
 for i in `seq $repeat`; do
 	# change the random seed by copying the start of the original seed to a different part of it
 	seednum=`expr $seednum + 1`
-	dd if="$seed" of="$tmpseed" bs=1 count=1024 skip=$seednum conv=notrunc 2> /dev/null
+	dd if="$seed" of="$tmpseed" bs=1 count=2048 skip=$seednum conv=notrunc 2> /dev/null
 	shuf --random-source="$tmpseed" "$charlist" | while read a; do
 
 		# change the random seed by copying the start of the original seed to a different part of it
 		seednum=`expr $seednum + 1`
-		dd if="$seed" of="$tmpseed" bs=1 count=1024 skip=$seednum conv=notrunc 2> /dev/null
+		dd if="$seed" of="$tmpseed" bs=1 count=2048 skip=$seednum conv=notrunc 2> /dev/null
 		words=`shuf --random-source="$tmpseed" < "$wordlist" | grep "$a" 2>/dev/null`
 
 		if test $? -eq 0; then
@@ -52,7 +52,7 @@ for i in `seq $repeat`; do
 
 				# change the random seed by copying the start of the original seed to a different part of it
 				seednum=`expr $seednum + 1`
-				dd if="$seed" of="$tmpseed" bs=1 count=1024 skip=$seednum conv=notrunc 2> /dev/null
+				dd if="$seed" of="$tmpseed" bs=1 count=2048 skip=$seednum conv=notrunc 2> /dev/null
 
 				word=`shuf --random-source="$tmpseed" < "$wordlist" | sed 1q`
 				echo "$word" | awk '{printf "%s ", $1}'
