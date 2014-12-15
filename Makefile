@@ -1,34 +1,24 @@
-CORPUSURL = http://www.perseus.tufts.edu/hopper/opensource/downloads/texts/hopper-texts-GreekRoman.tar.gz
+CORPUSURL = https://github.com/brobertson/rigaudon/raw/master/Dictionaries/greek_and_latin.txt
 # CORPUSURL = http://ancientgreekocr.org/archived/hopper-texts-GreekRoman.tar.gz # backup copy
 UTFSRC = tools/libutf/rune.c tools/libutf/utf.c
 
 AMBIGS = \
-	unicharambigs.accent \
-	unicharambigs.anoteleiaaccent \
-	unicharambigs.apostrophe \
-	unicharambigs.breathing \
-	unicharambigs.rho \
-	unicharambigs.deltaomicron \
-	unicharambigs.misc \
-	unicharambigs.omicroniotaalpha \
-	unicharambigs.omicronzero \
-	unicharambigs.quoteaccent
+	common.unicharambigs \
+	eng.unicharambigs
 
 all: training_text.txt lat.freq.txt lat.word.txt lat.unicharambigs
 
-corpus:
-	mkdir -p $@
-	cd $@ ; wget -O - $(CORPUSURL) \
-	| zcat | tar x
+greek_and_latin.txt:
+	wget $(CORPUSURL)
 
-wordlist: tools/wordlistfromperseus.sh corpus
-	tools/wordlistfromperseus.sh corpus > $@
+wordlist: tools/wordlistfromrigaudon.sh greek_and_latin.txt
+	tools/wordlistfromrigaudon.sh < greek_and_latin.txt > $@
 
-lat.freq.txt: tools/wordlistparsefreq.sh wordlist
-	tools/wordlistparsefreq.sh < wordlist > $@
+lat.freq.txt: tools/rigaudonparsefreq.sh wordlist
+	tools/rigaudonparsefreq.sh < wordlist > $@
 
-lat.word.txt: tools/wordlistparseword.sh wordlist
-	tools/wordlistparseword.sh < wordlist > $@
+lat.word.txt: tools/rigaudonparseword.sh wordlist
+	tools/rigaudonparseword.sh < wordlist > $@
 
 seed:
 	dd if=/dev/urandom of=$@ bs=1024 count=1536
@@ -68,4 +58,4 @@ clean:
 	rm -f tools/accentambigs tools/breathingambigs tools/rhoambigs tools/isupper
 	rm -f unicharambigs.accent unicharambigs.breathing unicharambigs.rho unicharambigs.omicronzero
 	rm -f training_text.txt lat.freq.txt lat.word.txt lat.unicharambigs
-	rm -rf corpus wordlist wordlist-betacode
+	rm -rf greek_and_latin.txt wordlist
