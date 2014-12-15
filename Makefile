@@ -21,7 +21,7 @@ lat.word.txt: tools/rigaudonparseword.sh wordlist
 	tools/rigaudonparseword.sh < wordlist > $@
 
 seed:
-	dd if=/dev/urandom of=$@ bs=1024 count=1536
+	dd if=/dev/urandom of=$@ bs=1024 count=8192
 
 training_text.txt: tools/makegarbage.sh tools/isupper allchars.txt lat.word.txt seed
 	tools/makegarbage.sh allchars.txt lat.word.txt seed > $@
