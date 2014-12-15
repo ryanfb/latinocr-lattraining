@@ -6,6 +6,7 @@ AMBIGS = \
 	common.unicharambigs \
 	long-s.unicharambigs \
 	ligatures.unicharambigs \
+	orthographic.unicharambigs \
 	eng.unicharambigs
 
 all: training_text.txt lat.freq.txt lat.word.txt lat.unicharambigs
