@@ -3,16 +3,8 @@ CORPUSURL = http://www.perseus.tufts.edu/hopper/opensource/downloads/texts/hoppe
 UTFSRC = tools/libutf/rune.c tools/libutf/utf.c
 
 AMBIGS = \
-	unicharambigs.accent \
-	unicharambigs.anoteleiaaccent \
-	unicharambigs.apostrophe \
-	unicharambigs.breathing \
-	unicharambigs.rho \
-	unicharambigs.deltaomicron \
-	unicharambigs.misc \
-	unicharambigs.omicroniotaalpha \
-	unicharambigs.omicronzero \
-	unicharambigs.quoteaccent
+	common.unicharambigs \
+	eng.unicharambigs
 
 all: training_text.txt lat.freq.txt lat.word.txt lat.unicharambigs
 
