@@ -7,7 +7,7 @@ Prints random words which contain each character, repeating
 several times. Uses seeds for randomisation (use /dev/random
 for real randomness)."
 
-repeat=20
+repeat=100
 
 test $# -ne 3 && echo "$usage" && exit 1
 
