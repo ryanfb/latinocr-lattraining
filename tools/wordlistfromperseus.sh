@@ -15,7 +15,7 @@ find "$1" -type f -name '*_lat.xml' | sort | while read i; do
 	cat "$i" \
 	| perl -pe 's|<foreign.*?</foreign>||g' \
 	| sed '1,/<body>/ d; /<\/body>/,$ d' \
-	| sed 's/<[^>]*>//g; s/\&[^;]*;//g' \
+	| sed 's/<note>/ /g; s/<[^>]*>//g; s/\&[^;]*;//g' \
 	| awk '{for(i=1;i<=NF;i++) {printf("%s\n", $i)}}' \
 	| sed '/[0-9]/d; /\[/d; /\]/d' \
 	| sed '/[-\/'"'"'@(){}=~|½£«+*;,.:!?"“”<>ое\r]/d' \
