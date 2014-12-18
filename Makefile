@@ -28,14 +28,14 @@ opengreekandlatin:
 greek_and_latin.txt:
 	wget $(RIGAUDONURL)
 
-wordlist.opengreekandlatin: tools/wordlistfromperseus.sh opengreekandlatin
-	tools/wordlistfromperseus.sh opengreekandlatin "*.xml" > $@
+wordlist.opengreekandlatin: tools/wordlistfromperseus.sh tools/striplineswithnonmatchingchars.sh opengreekandlatin
+	tools/wordlistfromperseus.sh opengreekandlatin "*.xml" | tools/striplineswithnonmatchingchars.sh allchars.txt > $@
 
 lat.opengreekandlatin.freq.txt: tools/wordlistparsefreq.sh wordlist.opengreekandlatin
 	tools/wordlistparsefreq.sh < wordlist.opengreekandlatin > lat.opengreekandlatin.freq.txt
 
-wordlist.perseus: tools/wordlistfromperseus.sh corpus
-	tools/wordlistfromperseus.sh corpus "*_lat.xml" > $@
+wordlist.perseus: tools/wordlistfromperseus.sh tools/striplineswithnonmatchingchars.sh corpus
+	tools/wordlistfromperseus.sh corpus "*_lat.xml" | tools/striplineswithnonmatchingchars.sh allchars.txt > $@
 
 wordlist.rigaudon: tools/wordlistfromrigaudon.sh greek_and_latin.txt
 	tools/wordlistfromrigaudon.sh < greek_and_latin.txt > $@
