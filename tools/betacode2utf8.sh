@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # See LICENSE file for copyright and license details.
 
 usage="Usage: $0
