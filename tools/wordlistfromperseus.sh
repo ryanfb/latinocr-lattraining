@@ -10,8 +10,8 @@ test $# -ne 1 && echo "$usage" && exit 1
 
 export LC_ALL=C # ensure reproducable sorting
 
-if [[ "$(uname)" == "Darwin" ]] && command -v gsed >/dev/null 2>&1; then
-  GPREFIX="g"
+if [[ "$(uname)" == "Darwin" ]]; then
+  command -v gsed >/dev/null 2>&1 && export GPREFIX="g"
 fi
 
 find "$1" -type f -name '*_lat.xml' | sort | while read i; do

@@ -11,8 +11,8 @@ repeat=100
 
 test $# -ne 3 && echo "$usage" && exit 1
 
-if [[ "$(uname)" == "Darwin" ]] && command -v gsed >/dev/null 2>&1; then
-  GPREFIX="g"
+if [[ "$(uname)" == "Darwin" ]]; then
+  command -v gsed >/dev/null 2>&1 && export GPREFIX="g"
 fi
 
 charlist="$1"
