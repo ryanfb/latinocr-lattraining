@@ -5,9 +5,10 @@ UTFSRC = tools/libutf/rune.c tools/libutf/utf.c
 
 AMBIGS = \
 	common.unicharambigs \
-	long-s.unicharambigs \
 	ligatures.unicharambigs \
-	orthographic.unicharambigs
+	long-s.unicharambigs \
+	orthographic.unicharambigs \
+	ct.unicharambigs
 
 all: training_text.txt lat.freq.txt lat.word.txt lat.unicharambigs
 
