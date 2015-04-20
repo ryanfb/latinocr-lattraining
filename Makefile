@@ -35,7 +35,7 @@ lat.rigaudon.word.txt: tools/rigaudonparseword.sh wordlist.rigaudon
 lat.perseus.word.txt: tools/wordlistparseword.sh wordlist.perseus
 	tools/wordlistparseword.sh < wordlist.perseus > $@
 
-lat.word.txt: lat.perseus.word.txt lat.rigaudon.word.txt
+lat.word.txt: lat.perseus.word.txt lat.rigaudon.word.txt lat.pleiades.word.txt
 	LC_ALL=C cat $^ | sort | uniq > $@
 
 seed:

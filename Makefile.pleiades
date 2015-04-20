@@ -1,0 +1,13 @@
+all: lat.pleiades.word.txt
+
+lat.pleiades.word.txt: latin-names-historic.csv
+	csvcut -c 27 latin-names-historic.csv | tr -d '",…' | tr ' ' "\n" | grep -v "[][?'’()+ŚĀ.0-9-]" | grep -v '^[a-z]' | grep -v '^$$' | sort -u > $@
+
+latin-names-historic.csv: pleiades-names-latest.csv
+	csvgrep -c 15 -r '^(la)?$$' pleiades-names-latest.csv | csvgrep -c 24 -i -r '[MOSN]'|csvgrep -c 7 -i -r '.*TAVO Index.*' > $@
+
+pleiades-names-latest.csv: pleiades-names-latest.csv.gz
+	gunzip -k pleiades-names-latest.csv.gz
+
+pleiades-names-latest.csv.gz:
+	wget 'http://atlantides.org/downloads/pleiades/dumps/pleiades-names-latest.csv.gz'
