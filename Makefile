@@ -35,7 +35,10 @@ lat.rigaudon.word.txt: tools/rigaudonparseword.sh wordlist.rigaudon
 lat.perseus.word.txt: tools/wordlistparseword.sh wordlist.perseus
 	tools/wordlistparseword.sh < wordlist.perseus > $@
 
-lat.word.txt: lat.perseus.word.txt lat.rigaudon.word.txt lat.pleiades.word.txt
+lat.cltk.names.txt:
+	curl 'https://raw.githubusercontent.com/cltk/latin_proper_names_cltk/master/proper_names.txt' | grep -v _ > $@
+
+lat.word.txt: lat.perseus.word.txt lat.rigaudon.word.txt lat.pleiades.word.txt lat.cltk.names.txt
 	LC_ALL=C cat $^ | sort | uniq > $@
 
 seed:
