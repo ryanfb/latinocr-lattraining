@@ -39,7 +39,7 @@ lat.cltk.names.txt:
 	curl 'https://raw.githubusercontent.com/cltk/latin_proper_names_cltk/master/proper_names.txt' | grep -v _ > $@
 
 lat.word.txt: lat.perseus.word.txt lat.rigaudon.word.txt lat.pleiades.word.txt lat.cltk.names.txt
-	LC_ALL=C cat $^ | sort | uniq > $@
+	LC_ALL=C cat $^ | sort | uniq | perl -ane '{ if(!m/[[:^ascii:]]/) { print  } }' > $@
 
 seed:
 	dd if=/dev/urandom of=$@ bs=1024 count=8192
