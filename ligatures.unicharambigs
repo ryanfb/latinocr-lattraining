@@ -9,6 +9,7 @@
 1	ﬄ	3	f f l	1
 1	ﬁ	2	f i	1
 1	ﬂ	2	f l	1
+1	ﬆ	2	s t	1
 1	ffi	3	f f i	1
 1	ffl	3	f f l	1
 1	fi	2	f i	1
@@ -22,6 +23,12 @@
 1	gg	2	g g	1
 1	gy	2	g y	1
 1	gj	2	g j	1
+1	si	2	s i	1
+1	st	2	s t	1
+1	ct	2	c t	1
+1	sl	2	s l	1
+1	ss	2	s s	1
+1	sh	2	s h	1
 2	s l	2	s t	0
 1	B	2	s s	0
 1	ß	1	B	0
