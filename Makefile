@@ -77,8 +77,8 @@ lat.freq.outer.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv
 lat.opengreekandlatin.word.txt: tools/wordlistparseword.sh wordlist.opengreekandlatin
 	tools/wordlistparseword.sh < wordlist.opengreekandlatin > $@
 
-lat.word.all.txt: lat.perseus.word.txt lat.rigaudon.word.txt lat.opengreekandlatin.word.txt
-	LC_ALL=C cat $^ | sort | uniq > $@
+lat.word.all.txt: lat.perseus.word.txt lat.rigaudon.word.txt lat.opengreekandlatin.word.txt lat.pleiades.word.txt lat.cltk.names.txt
+	LC_ALL=C cat $^ | sort | uniq | perl -ane '{ if(!m/[[:^ascii:]]/) { print  } }' > $@
 
 seed:
 	dd if=/dev/urandom of=$@ bs=1024 count=8192
