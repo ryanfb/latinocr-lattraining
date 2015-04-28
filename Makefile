@@ -41,6 +41,24 @@ lat.cltk.names.txt:
 lat.word.txt: lat.perseus.word.txt lat.rigaudon.word.txt lat.pleiades.word.txt lat.cltk.names.txt
 	LC_ALL=C cat $^ | sort | uniq | perl -ane '{ if(!m/[[:^ascii:]]/) { print  } }' > $@
 
+most-common-latin-words.txt:
+	wget 'http://kyle-p-johnson.com/assets/most-common-latin-words.txt'
+
+lat.perseus.freq.csv: wordlist.perseus
+	sort < wordlist.perseus | uniq -c | awk '{print $$2 "," $$1}' > $@
+
+lat.rigaudon.freq.csv: wordlist.rigaudon
+	cp wordlist.rigaudon lat.rigaudon.freq.csv
+
+lat.cltk.freq.csv: most-common-latin-words.txt
+	tr "\\t" , < $^ > $@
+
+lat.freq.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv
+	csvjoin -c 1,1,1 $^ | awk -F, '{sum = $$2 + $$4 + $$6 + $$8 ; print $$1 "," sum}' | sort -g -r -t, -k2,2 > $@
+
+lat.freq.outer.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv
+	csvjoin --outer -c 1,1,1 $^ | sed -e 's/,,//g' | awk -F, '{sum = $$2 + $$4 + $$6 + $$8 ; print $$1 "," sum}' | sort -g -r -t, -k2,2 > $@
+
 seed:
 	dd if=/dev/urandom of=$@ bs=1024 count=8192
 
