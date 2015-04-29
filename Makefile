@@ -59,6 +59,9 @@ lat.word.txt: lat.perseus.word.txt lat.rigaudon.word.txt lat.pleiades.word.txt l
 most-common-latin-words.txt:
 	wget 'http://kyle-p-johnson.com/assets/most-common-latin-words.txt'
 
+lat.opengreekandlatin.freq.csv: wordlist.opengreekandlatin
+	sort < wordlist.opengreekandlatin | uniq -c | awk '{print $$2 "," $$1}' > $@
+
 lat.perseus.freq.csv: wordlist.perseus
 	sort < wordlist.perseus | uniq -c | awk '{print $$2 "," $$1}' > $@
 
@@ -68,11 +71,11 @@ lat.rigaudon.freq.csv: wordlist.rigaudon
 lat.cltk.freq.csv: most-common-latin-words.txt
 	tr "\\t" , < $^ > $@
 
-lat.freq.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv
-	csvjoin -c 1,1,1 $^ | awk -F, '{sum = $$2 + $$4 + $$6 + $$8 ; print $$1 "," sum}' | sort -g -r -t, -k2,2 > $@
+lat.freq.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv lat.opengreekandlatin.freq.csv
+	csvjoin -c 1,1,1,1 $^ | awk -F, '{sum = $$2 + $$4 + $$6 + $$8 ; print $$1 "," sum}' | sort -g -r -t, -k2,2 > $@
 
-lat.freq.outer.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv
-	csvjoin --outer -c 1,1,1 $^ | sed -e 's/,,//g' | awk -F, '{sum = $$2 + $$4 + $$6 + $$8 ; print $$1 "," sum}' | sort -g -r -t, -k2,2 > $@
+lat.freq.outer.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv lat.opengreekandlatin.freq.csv
+	csvjoin --outer -c 1,1,1,1 $^ | sed -e 's/,,//g' | awk -F, '{sum = $$2 + $$4 + $$6 + $$8 ; print $$1 "," sum}' | sort -g -r -t, -k2,2 > $@
 
 lat.opengreekandlatin.word.txt: tools/wordlistparseword.sh wordlist.opengreekandlatin
 	tools/wordlistparseword.sh < wordlist.opengreekandlatin > $@
