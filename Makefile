@@ -41,8 +41,11 @@ wordlist.perseus: tools/wordlistfromperseus.sh tools/striplineswithnonmatchingch
 wordlist.rigaudon: tools/wordlistfromrigaudon.sh greek_and_latin.txt
 	tools/wordlistfromrigaudon.sh < greek_and_latin.txt > $@
 
-lat.freq.txt: tools/rigaudonparsefreq.sh wordlist.rigaudon
+lat.rigaudon.freq.txt: tools/rigaudonparsefreq.sh wordlist.rigaudon
 	tools/rigaudonparsefreq.sh < wordlist.rigaudon > $@
+
+lat.freq.txt: lat.freq.outer.csv
+	cut -d',' -f1 $^ | head -n 10000 > $@
 
 lat.rigaudon.word.txt: tools/rigaudonparseword.sh wordlist.rigaudon
 	tools/rigaudonparseword.sh < wordlist.rigaudon > $@
@@ -71,10 +74,16 @@ lat.rigaudon.freq.csv: wordlist.rigaudon
 lat.cltk.freq.csv: most-common-latin-words.txt
 	tr "\\t" , < $^ > $@
 
-lat.freq.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv lat.opengreekandlatin.freq.csv
+lat.freq.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv
+	csvjoin -c 1,1,1 $^ | awk -F, '{sum = $$2 + $$4 + $$6 + $$8 ; print $$1 "," sum}' | sort -g -r -t, -k2,2 > $@
+
+lat.freq.outer.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv
+	csvjoin --outer -c 1,1,1 $^ | sed -e 's/,,//g' | awk -F, '{sum = $$2 + $$4 + $$6 + $$8 ; print $$1 "," sum}' | sort -g -r -t, -k2,2 > $@
+
+lat.freq.ogl.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv lat.opengreekandlatin.freq.csv
 	csvjoin -c 1,1,1,1 $^ | awk -F, '{sum = $$2 + $$4 + $$6 + $$8 ; print $$1 "," sum}' | sort -g -r -t, -k2,2 > $@
 
-lat.freq.outer.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv lat.opengreekandlatin.freq.csv
+lat.freq.ogl.outer.csv: lat.cltk.freq.csv lat.rigaudon.freq.csv lat.perseus.freq.csv lat.opengreekandlatin.freq.csv
 	csvjoin --outer -c 1,1,1,1 $^ | sed -e 's/,,//g' | awk -F, '{sum = $$2 + $$4 + $$6 + $$8 ; print $$1 "," sum}' | sort -g -r -t, -k2,2 > $@
 
 lat.opengreekandlatin.word.txt: tools/wordlistparseword.sh wordlist.opengreekandlatin
