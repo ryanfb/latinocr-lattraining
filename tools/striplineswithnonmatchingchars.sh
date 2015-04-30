@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 usage="Usage: $0 charsfile
 
