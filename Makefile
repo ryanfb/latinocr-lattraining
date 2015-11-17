@@ -6,14 +6,7 @@ OPENGREEKANDLATIN_REPOS = \
 	csel-dev \
 	patrologia_latina-dev
 
-AMBIGS = \
-	common.unicharambigs \
-	ligatures.unicharambigs \
-	long-s.unicharambigs \
-	orthographic.unicharambigs \
-	ct.unicharambigs
-
-all: training_text.txt lat.freq.txt lat.word.txt lat.unicharambigs
+all: training_text.txt lat.freq.txt lat.word.txt
 
 corpus:
 	mkdir -p $@
@@ -98,36 +91,9 @@ seed:
 training_text.txt: tools/makegarbage.sh tools/isupper allchars.txt lat.word.txt seed
 	tools/makegarbage.sh allchars.txt lat.word.txt seed > $@
 
-unicharambigs.accent: tools/accentambigs
-	tools/accentambigs > $@
-
-unicharambigs.breathing: tools/breathingambigs charsforambigs.txt
-	tools/breathingambigs charsforambigs.txt > $@
-
-unicharambigs.rho: tools/rhoambigs charsforambigs.txt
-	tools/rhoambigs charsforambigs.txt > $@
-
-unicharambigs.omicronzero: tools/omicronzeroambigs.sh charsforambigs.txt
-	tools/omicronzeroambigs.sh charsforambigs.txt > $@
-
-lat.unicharambigs: $(AMBIGS)
-	echo v1 > $@
-	cat $(AMBIGS) >> $@
-
-tools/accentambigs: tools/accentambigs.c
-	$(CC) $(UTFSRC) $@.c -o $@
-
-tools/breathingambigs: tools/breathingambigs.c
-	$(CC) $(UTFSRC) $@.c -o $@
-
-tools/rhoambigs: tools/rhoambigs.c
-	$(CC) $(UTFSRC) $@.c -o $@
-
 tools/isupper: tools/isupper.c
 	$(CC) $(UTFSRC) tools/util/runetype.c $@.c -o $@
 
 clean:
-	rm -f tools/accentambigs tools/breathingambigs tools/rhoambigs tools/isupper
-	rm -f unicharambigs.accent unicharambigs.breathing unicharambigs.rho unicharambigs.omicronzero
-	rm -f training_text.txt lat.freq.txt lat.word.txt lat.unicharambigs
+	rm -f training_text.txt lat.freq.txt lat.word.txt
 	rm -rf greek_and_latin.txt wordlist.rigaudon corpus wordlist.perseus
