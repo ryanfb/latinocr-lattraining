@@ -6,7 +6,7 @@ OPENGREEKANDLATIN_REPOS = \
 	csel-dev \
 	patrologia_latina-dev
 
-all: training_text.txt lat.freq.txt lat.word.txt
+all: lat.training_text lat.training_text.unigram_freqs lat.wordlist
 
 corpus:
 	mkdir -p $@
@@ -37,7 +37,7 @@ wordlist.rigaudon: tools/wordlistfromrigaudon.sh greek_and_latin.txt
 lat.rigaudon.freq.txt: tools/rigaudonparsefreq.sh wordlist.rigaudon
 	tools/rigaudonparsefreq.sh < wordlist.rigaudon > $@
 
-lat.freq.txt: lat.freq.outer.csv
+lat.training_text.unigram_freqs: lat.freq.outer.csv
 	cut -d',' -f1 $^ | head -n 10000 > $@
 
 lat.rigaudon.word.txt: tools/rigaudonparseword.sh wordlist.rigaudon
@@ -49,7 +49,7 @@ lat.perseus.word.txt: tools/wordlistparseword.sh wordlist.perseus
 lat.cltk.names.txt:
 	curl 'https://raw.githubusercontent.com/cltk/latin_proper_names_cltk/master/proper_names.txt' | grep -v _ > $@
 
-lat.word.txt: lat.perseus.word.txt lat.rigaudon.word.txt lat.pleiades.word.txt lat.cltk.names.txt
+lat.wordlist: lat.perseus.word.txt lat.rigaudon.word.txt lat.pleiades.word.txt lat.cltk.names.txt
 	LC_ALL=C cat $^ | sort | uniq | perl -ane '{ if(!m/[[:^ascii:]]/) { print  } }' > $@
 
 most-common-latin-words.txt:
@@ -88,12 +88,12 @@ lat.word.all.txt: lat.perseus.word.txt lat.rigaudon.word.txt lat.opengreekandlat
 seed:
 	dd if=/dev/urandom of=$@ bs=1024 count=8192
 
-training_text.txt: tools/makegarbage.sh tools/isupper allchars.txt lat.word.txt seed
+lat.training_text: tools/makegarbage.sh tools/isupper allchars.txt lat.word.txt seed
 	tools/makegarbage.sh allchars.txt lat.word.txt seed > $@
 
 tools/isupper: tools/isupper.c
 	$(CC) $(UTFSRC) tools/util/runetype.c $@.c -o $@
 
 clean:
-	rm -f training_text.txt lat.freq.txt lat.word.txt
+	rm -f lat.training_text lat.training_text.unigram_freqs lat.wordlist
 	rm -rf greek_and_latin.txt wordlist.rigaudon corpus wordlist.perseus
