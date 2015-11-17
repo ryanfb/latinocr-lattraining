@@ -88,8 +88,8 @@ lat.word.all.txt: lat.perseus.word.txt lat.rigaudon.word.txt lat.opengreekandlat
 seed:
 	dd if=/dev/urandom of=$@ bs=1024 count=8192
 
-lat.training_text: tools/makegarbage.sh tools/isupper allchars.txt lat.word.txt seed
-	tools/makegarbage.sh allchars.txt lat.word.txt seed > $@
+lat.training_text: tools/makegarbage.sh tools/isupper allchars.txt lat.wordlist seed
+	tools/makegarbage.sh allchars.txt lat.wordlist seed > $@
 
 tools/isupper: tools/isupper.c
 	$(CC) $(UTFSRC) tools/util/runetype.c $@.c -o $@
