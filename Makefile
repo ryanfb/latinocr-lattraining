@@ -2,8 +2,8 @@
 # CORPUSURL = http://ancientgreekocr.org/archived/hopper-texts-GreekRoman.tar.gz # backup copy
 UTFSRC = tools/libutf/rune.c tools/libutf/utf.c
 
-PERSEUS_CORPUS_GIT_URL = https://github.com/PerseusDL/canonical-greekLit
-PERSEUS_CORPUS_GIT_COMMIT = 433bee94d51c0bd147e1a39513fde622d542a49e
+PERSEUS_CORPUS_GIT_URL = https://github.com/PerseusDL/canonical-latinLit
+PERSEUS_CORPUS_GIT_COMMIT = d64416dc084c9fd7d61d5aedf4c465296dc171ae
 CLTK_LATIN_PROPER_NAMES_GIT_COMMIT = 771c9fb50c82e73a2287499905a8a8577643b2ce
 RIGAUDON_GIT_COMMIT = 3f6292f656bd2920fc8980893ad57fa111153837
 RIGAUDON_URL = https://github.com/brobertson/rigaudon/raw/$(RIGAUDON_GIT_COMMIT)/Dictionaries/greek_and_latin.txt
@@ -35,7 +35,7 @@ lat.opengreekandlatin.freq.txt: tools/wordlistparsefreq.sh wordlist.opengreekand
 	tools/wordlistparsefreq.sh < wordlist.opengreekandlatin > lat.opengreekandlatin.freq.txt
 
 wordlist.perseus: tools/wordlistfromperseus.sh tools/striplineswithnonmatchingchars.sh corpus
-	tools/wordlistfromperseus.sh corpus "*_lat.xml" | tools/striplineswithnonmatchingchars.sh allchars.txt > $@
+	tools/wordlistfromperseus.sh corpus "*-lat*.xml" | tools/striplineswithnonmatchingchars.sh allchars.txt > $@
 
 wordlist.rigaudon: tools/wordlistfromrigaudon.sh greek_and_latin.txt
 	tools/wordlistfromrigaudon.sh < greek_and_latin.txt > $@
