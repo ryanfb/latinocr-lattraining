@@ -1,7 +1,11 @@
 RIGAUDONURL = https://github.com/brobertson/rigaudon/raw/master/Dictionaries/greek_and_latin.txt
-CORPUSURL = http://www.perseus.tufts.edu/hopper/opensource/downloads/texts/hopper-texts-GreekRoman.tar.gz
+# CORPUSURL = http://www.perseus.tufts.edu/hopper/opensource/downloads/texts/hopper-texts-GreekRoman.tar.gz
 # CORPUSURL = http://ancientgreekocr.org/archived/hopper-texts-GreekRoman.tar.gz # backup copy
 UTFSRC = tools/libutf/rune.c tools/libutf/utf.c
+
+PERSEUS_CORPUS_GIT_URL = https://github.com/PerseusDL/canonical-greekLit
+PERSEUS_CORPUS_GIT_COMMIT = 433bee94d51c0bd147e1a39513fde622d542a49e
+
 OPENGREEKANDLATIN_REPOS = \
 	csel-dev \
 	patrologia_latina-dev
@@ -9,9 +13,9 @@ OPENGREEKANDLATIN_REPOS = \
 all: lat.training_text lat.training_text.unigram_freqs lat.wordlist
 
 corpus:
-	mkdir -p $@
-	cd $@ ; wget -O - $(CORPUSURL) \
-	| zcat | tar x
+	rm -rf corpus
+	git clone $(PERSEUS_CORPUS_GIT_URL) corpus
+	cd corpus && git checkout $(PERSEUS_CORPUS_GIT_URL)
 
 opengreekandlatin:
 	mkdir -p $@
