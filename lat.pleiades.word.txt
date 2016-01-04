@@ -1,4 +1,3 @@
-Abai
 Abala
 Abale
 Abali
@@ -73,7 +72,6 @@ Abolla
 Abollas
 Abona
 Abone
-Abonouteichos
 Aborake
 Aboriense
 Aboritae
@@ -600,8 +598,6 @@ Aitolia
 Aiungi
 Aiungitanorum
 Aiungitanrum
-Aixone
-Aixonides
 Aizanoi
 Aizaroi
 Aizisis
@@ -631,7 +627,6 @@ Akellon
 Akerateion
 Akesai
 Akesamenai
-Akesines
 Akesinos
 Akhur
 Akidas
@@ -699,7 +694,6 @@ Akytos
 Ala
 Alaba
 Alabana
-Alabanda
 Alabanthis
 Alabastrine
 Alabastronpolis
@@ -1011,7 +1005,6 @@ Amardos
 Amarea
 Amareis
 Amarynthos
-Amaseia
 Amasenus
 Amastor
 Amastris
@@ -1117,7 +1110,6 @@ Ammontem
 Amnamethus
 Amneni
 Amnestum
-Amnias
 Amnisos
 Amnista
 Amnum
@@ -1200,7 +1192,6 @@ Amyron
 Amyros
 Amystis
 Amythaonia
-Amyzon
 Ana
 Anabatenos
 Anabatha
@@ -1357,7 +1348,6 @@ Aneuniates
 Angdisseon
 Ange
 Angeia
-Angele
 Angelum
 Angenior
 Anger
@@ -1380,6 +1370,7 @@ Anicetis
 Aniciorum
 Anicium
 Anides
+Aniensis
 Anieseis
 Anigraia
 Anigros
@@ -1611,7 +1602,6 @@ Aphroditopolites
 Aphrodysium
 Aphthis
 Aphytis
-Apia
 Apiados
 Apias
 Apicilia
@@ -1656,7 +1646,6 @@ Apostoli
 Apotheke
 Apothetai
 Apotimatai
-Apoulon
 Appadana
 Appenninus
 Apphadana
@@ -1804,7 +1793,6 @@ Aranni
 Arantia
 Arantinos
 Araocelum
-Araphen
 Araphenides
 Araplos
 Arar
@@ -2144,6 +2132,7 @@ Arnay
 Arne
 Arneai
 Arnemetiae
+Arnensis
 Arnisa
 Arnon
 Arnum
@@ -2512,7 +2501,6 @@ Ataxasitenoi
 Atecotti
 Ategua
 Atella
-Atene
 Ater
 Atera
 Aterion
@@ -2891,7 +2879,6 @@ Azitta
 Azochis
 Azonai
 Azoni
-Azoros
 Azotos
 Azouis
 Azurion
@@ -3455,7 +3442,6 @@ Bendas
 Bendosaboron
 Bene
 Benearnum
-Benebentos
 Benedictus
 Beneharnum
 Beneventanus
@@ -3611,7 +3597,6 @@ Biadyna
 Biana
 Biandyna
 Biannos
-Bias
 Biatia
 Biavana
 Bibae
@@ -3729,7 +3714,6 @@ Bitensia
 Bithias
 Bithra
 Bithynia
-Bithynion
 Bitia
 Bitnik
 Bitouris
@@ -3842,7 +3826,6 @@ Boleoi
 Bolerion
 Boletum
 Bolia
-Bolinaios
 Boline
 Bolingae
 Boliskos
@@ -3957,7 +3940,6 @@ Boudeion
 Boudia
 Boudion
 Boudorigon
-Boudoron
 Boudoros
 Boudroe
 Boukasa
@@ -4011,7 +3993,6 @@ Boutae
 Boutaphion
 Boutheia
 Bouthoe
-Bouthroton
 Boutike
 Bouto
 Boutta
@@ -4061,6 +4042,7 @@ Brea
 Bredas
 Bregma
 Breierophara
+Bremenium
 Bremetennacum
 Bremia
 Bremtonicum
@@ -4145,7 +4127,6 @@ Bromanenses
 Bromiaeus
 Bromiskos
 Brona
-Brongos
 Bronton
 Brouchoi
 Brousis
@@ -4473,11 +4454,13 @@ Cameliomagus
 Camerata
 Camere
 Cameria
+Camerina
 Camerinum
 Cametas
 Camiaeum
 Camicus
 Camila
+Camilia
 Caminacum
 Caminia
 Camino
@@ -4572,6 +4555,7 @@ Capita
 Capitalia
 Capitium
 Capitolina
+Capitolinus
 Capitolium
 Capitoniana
 Capitulum
@@ -5010,7 +4994,6 @@ Chalke
 Chalkedon
 Chalkedonion
 Chalkeion
-Chalketor
 Chalkideis
 Chalkidike
 Chalkidikon
@@ -5184,7 +5167,6 @@ Choireai
 Choireios
 Choirios
 Chol
-Cholargos
 Cholbesina
 Cholimma
 Cholle
@@ -5431,6 +5413,7 @@ Clunia
 Clusinus
 Clusiolum
 Clusium
+Clustumina
 Cluturnum
 Cluviae
 Clysma
@@ -5486,6 +5469,7 @@ Colis
 Colla
 Collatia
 Colles
+Collina
 Collippo
 Collis
 Colobae
@@ -5756,6 +5740,7 @@ Crococalana
 Crocodilon
 Crocodilus
 Cromen
+Cromna
 Crosa
 Crotalus
 Croto
@@ -5770,6 +5755,7 @@ Crumerum
 Crunoe
 Crusinie
 Crustumerium
+Crustumina
 Crustumium
 Crustumius
 Ctesiphon
@@ -5933,7 +5919,6 @@ Dagoutenoi
 Dahae
 Daiara
 Daidala
-Daidalidai
 Daimon
 Daimonos
 Daisun
@@ -5977,6 +5962,7 @@ Dandake
 Dandarioi
 Dandaxina
 Dandexina
+Dangalae
 Dani
 Danova
 Danum
@@ -6119,7 +6105,6 @@ Dehas
 Deiagenoi
 Deikterion
 Deir
-Deiradiotai
 Deiradiotes
 Deiras
 Deire
@@ -6350,7 +6335,6 @@ Diolkides
 Diolkos
 Diomedeae
 Diomedis
-Diomeia
 Dion
 Dionia
 Dionnum
@@ -6712,7 +6696,6 @@ Edeta
 Edetani
 Edetania
 Edistianenis
-Edones
 Edrani
 Edrias
 Edronis
@@ -6743,7 +6726,6 @@ Eikote
 Eikour
 Eileithyaia
 Eileithyias
-Eileithyiaspolis
 Eileoi
 Eilesion
 Eiokome
@@ -7047,7 +7029,6 @@ Epoissum
 Epomeus
 Epope
 Epora
-Eporedia
 Epternacus
 Equabona
 Equaesi
@@ -7182,6 +7163,7 @@ Eser
 Eshthemoa
 Esica
 Esou
+Esquilina
 Esquilinus
 Essa
 Essedones
@@ -7282,7 +7264,6 @@ Eunaia
 Eunias
 Eunostidai
 Euonymitai
-Euonymon
 Euonymus
 Euoras
 Euorgas
@@ -7297,13 +7278,11 @@ Euphratesia
 Euphrosynou
 Eupilis
 Euporia
-Eupyridai
 Eureeis
 Eureia
 Euripos
 Euristus
 Euroia
-Euromos
 Europa
 Europae
 Europe
@@ -7366,6 +7345,7 @@ Ezetium
 Fabaria
 Fabaris
 Fabatianum
+Fabia
 Fabianus
 Fabrateria
 Facenio
@@ -7378,6 +7358,7 @@ Falacro
 Falacron
 Falerii
 Falerio
+Falerna
 Falernus
 Falesia
 Falinates
@@ -7582,7 +7563,6 @@ Frusino
 Frusteniae
 Fucens
 Fucinus
-Fufluna
 Fugitivi
 Fulfinium
 Fulginiae
@@ -7684,6 +7664,7 @@ Galava
 Gale
 Galea
 Galepsos
+Galeria
 Gales
 Galessos
 Galia
@@ -7747,7 +7728,6 @@ Ganges
 Gangeticus
 Gangites
 Gangorae
-Gangra
 Ganos
 Ganuenta
 Ganzak
@@ -7776,7 +7756,6 @@ Gargara
 Gargarius
 Gargarum
 Gargaza
-Gargettos
 Gari
 Gariannonum
 Gariannum
@@ -7823,7 +7802,6 @@ Gausitha
 Gauzania
 Gauzanitis
 Gay
-Gaza
 Gazaba
 Gazaca
 Gazae
@@ -7917,7 +7895,6 @@ Geraia
 Geraistos
 Gerana
 Geraneae
-Geraneia
 Gerania
 Geranion
 Geranios
@@ -8019,6 +7996,7 @@ Gigthis
 Gigurri
 Gigurrorum
 Gilda
+Gilia
 Giligamai
 Gillium
 Gilpil
@@ -8122,10 +8100,10 @@ Gordiani
 Gordinia
 Gordiniae
 Gordiokometai
-Gordion
 Gordioukome
 Gordiouteichos
 Gorditanum
+Gordium
 Gordos
 Gordus
 Gordyene
@@ -8342,12 +8320,10 @@ Haliartos
 Halicanum
 Halicarnassus
 Halieion
-Halieis
 Halieuma
 Halike
 Halikon
 Halikyrna
-Halimous
 Halios
 Halioussa
 Halipedon
@@ -8652,7 +8628,6 @@ Heteireia
 Heudonos
 Hevron
 Hexapyla
-Hiarotis
 Hiaspis
 Hibeos
 Hibera
@@ -8701,6 +8676,7 @@ Hikesia
 Hileia
 Hiltensis
 Himella
+Himera
 Himeraeae
 Himeras
 Himeros
@@ -8713,7 +8689,6 @@ Hipparis
 Hippenos
 Hippika
 Hippios
-Hippium
 Hippius
 Hippo
 Hippoi
@@ -8778,7 +8753,6 @@ Hoetu
 Holkos
 Holmoi
 Homadena
-Homeritai
 Homilai
 Homolion
 Homonadeis
@@ -8789,6 +8763,7 @@ Hoplonos
 Hora
 Horaba
 Horaia
+Horatia
 Horeb
 Horetum
 Horma
@@ -8829,7 +8804,6 @@ Hyaila
 Hyameia
 Hyameitis
 Hyampeia
-Hyampolis
 Hyantia
 Hyapeia
 Hybadai
@@ -8851,7 +8825,6 @@ Hydor
 Hydra
 Hydrakai
 Hydramia
-Hydraotes
 Hydrax
 Hydrea
 Hydrela
@@ -8888,7 +8861,6 @@ Hylloi
 Hyllos
 Hymauparoubri
 Hymessos
-Hymettos
 Hymos
 Hyops
 Hypaea
@@ -8982,7 +8954,6 @@ Ianouaria
 Iaphtha
 Iapis
 Iapudes
-Iapyges
 Iapygia
 Iapygum
 Iapyx
@@ -9205,7 +9176,6 @@ Imrougarene
 Imus
 In
 Ina
-Inachia
 Inachos
 Inapaei
 Inarime
@@ -9304,7 +9274,6 @@ Iones
 Ionia
 Ioniapolis
 Ionidai
-Ionios
 Ionium
 Ionnaria
 Ionon
@@ -9752,7 +9721,6 @@ Kaminoi
 Kamiris
 Kamiros
 Kamisa
-Kammania
 Kammoni
 Kamoulianai
 Kamouresarbon
@@ -9948,7 +9916,6 @@ Karpasia
 Karpasyanda
 Karpates
 Karpathion
-Karpathos
 Karpathou
 Karpeia
 Karpella
@@ -10173,7 +10140,6 @@ Keras
 Kerasai
 Kerasous
 Kerassai
-Kerata
 Kerateis
 Keraunia
 Keraunilia
@@ -10237,7 +10203,6 @@ Kese
 Keskyros
 Kesmouchis
 Kestria
-Kestrine
 Kestros
 Ketaion
 Ketaria
@@ -10463,7 +10428,6 @@ Koliorga
 Kollintathyr
 Kollouthou
 Kollyda
-Kollytos
 Kolobaise
 Kolobatos
 Koloboi
@@ -10532,7 +10496,6 @@ Konstantia
 Konstantiana
 Konta
 Kontadesdos
-Konthyle
 Kontobris
 Kontoporia
 Koounos
@@ -10545,7 +10508,6 @@ Kopion
 Koplanion
 Kopoustoros
 Koprates
-Kopros
 Korada
 Koraia
 Korakai
@@ -10670,7 +10632,6 @@ Kotamba
 Kotenna
 Kotensioi
 Kotes
-Kothokidai
 Kotiaeion
 Kotilion
 Kotilon
@@ -10792,7 +10753,6 @@ Kritalla
 Krithote
 Krobialos
 Krobyzoi
-Krokeai
 Krokobara
 Krokodeilonpolis
 Krokodeilopolites
@@ -10812,7 +10772,6 @@ Kronia
 Kronion
 Kronios
 Kronou
-Kropidai
 Krossaie
 Krouanenoi
 Krouleis
@@ -10851,7 +10810,6 @@ Kybersos
 Kydai
 Kydantidai
 Kydaros
-Kydathenaion
 Kydeake
 Kydna
 Kydonia
@@ -11324,6 +11282,7 @@ Lemellef
 Lemincum
 Lemnis
 Lemnos
+Lemonia
 Lemovices
 Lemovii
 Lenaiou
@@ -11738,6 +11697,7 @@ Lucas
 Luceni
 Lucenses
 Lucentum
+Luceres
 Luceria
 Lucia
 Luciacus
@@ -11921,6 +11881,7 @@ Madyandinoi
 Madytos
 Maeander
 Maeandrum
+Maecia
 Maenius
 Maenoba
 Maenuba
@@ -11974,7 +11935,6 @@ Magnos
 Magnum
 Magnus
 Mago
-Magoi
 Magon
 Magoras
 Magouda
@@ -12232,6 +12192,7 @@ Mapsoukrenai
 Mar
 Mara
 Marabina
+Maracanda
 Maraccas
 Maraccus
 Maraces
@@ -12240,7 +12201,6 @@ Marad
 Maraeu
 Maragui
 Marah
-Marakanda
 Marakodra
 Marakoi
 Marandis
@@ -12322,7 +12282,6 @@ Mariamme
 Mariana
 Marianae
 Mariandikos
-Mariandynoi
 Mariandynus
 Marianon
 Marianus
@@ -12741,7 +12700,6 @@ Melouchea
 Meloukome
 Melpeia
 Melpes
-Melpis
 Melpum
 Melsos
 Melta
@@ -12795,6 +12753,7 @@ Menelaion
 Menelais
 Menelaites
 Menelaos
+Menenia
 Menestheos
 Menestheus
 Meninge
@@ -13024,7 +12983,6 @@ Min
 Mina
 Minaei
 Minagara
-Minaioi
 Minariacum
 Minassos
 Minatiacum
@@ -13280,7 +13238,6 @@ Mothis
 Mothites
 Mothiton
 Motho
-Mothone
 Mothous
 Motoutourioi
 Mottiana
@@ -13450,7 +13407,6 @@ Myrmex
 Myrmix
 Myronos
 Myros
-Myrrinous
 Myrrinoutta
 Myrsiake
 Myrsineai
@@ -14153,7 +14109,6 @@ Oducia
 Odyssea
 Odysseae
 Odysseia
-Oe
 Oea
 Oebalia
 Oeenses
@@ -14172,7 +14127,6 @@ Oglasa
 Ogmenos
 Ogou
 Ogygia
-Ogylos
 Ogyris
 Oia
 Oiai
@@ -14322,7 +14276,6 @@ Ona
 Onagrinum
 Onalos
 Onchae
-Onchesmos
 Onchestos
 Onchiakon
 Onellaba
@@ -14378,7 +14331,6 @@ Ophradus
 Opia
 Opiane
 Opikanos
-Opikoi
 Opino
 Opinoi
 Opinon
@@ -14614,6 +14566,7 @@ Ostaphos
 Osteodes
 Ostha
 Ostia
+Ostiensis
 Ostippo
 Ostium
 Ostobalasara
@@ -14708,6 +14661,7 @@ Ouestene
 Ouetissos
 Ouetiston
 Ouezaitai
+Oufentina
 Ougouroi
 Ouiadoua
 Ouiana
@@ -14921,6 +14875,7 @@ Palankaios
 Palantenses
 Palantia
 Palas
+Palatina
 Palatiolum
 Palation
 Palatitae
@@ -15073,6 +15028,7 @@ Paphos
 Papi
 Papike
 Papira
+Papiria
 Papirianae
 Papirion
 Papiriou
@@ -15360,7 +15316,6 @@ Pelasgikos
 Pelasgiotis
 Pele
 Pelekas
-Pelekes
 Pelenariae
 Pelendava
 Pelendones
@@ -15380,7 +15335,6 @@ Pelleta
 Pelliti
 Pelodes
 Pelopis
-Peloponnesus
 Peloriaca
 Peloriacha
 Peloriarca
@@ -15469,7 +15423,6 @@ Perimula
 Perinkari
 Perinthus
 Perippiois
-Perithoidai
 Perkeesis
 Perkes
 Perkethaut
@@ -15568,7 +15521,6 @@ Peumata
 Pezion
 Pezonia
 Phabda
-Phabra
 Phadisane
 Phaeca
 Phaenica
@@ -15638,7 +15590,6 @@ Pharbaithos
 Pharbelos
 Pharga
 Phargamous
-Pharis
 Pharkadon
 Pharmakia
 Pharmakousa
@@ -15721,7 +15672,6 @@ Philaenorum
 Philagrianos
 Philagris
 Philaia
-Philaidai
 Philanorion
 Philas
 Phileas
@@ -16109,7 +16059,6 @@ Platamodes
 Platamos
 Platane
 Platanistes
-Plataniston
 Platanistos
 Platanoi
 Platanos
@@ -16228,6 +16177,7 @@ Politice
 Politike
 Politorium
 Pollentia
+Pollia
 Pollition
 Pollupice
 Pollusca
@@ -16263,6 +16213,7 @@ Pompeii
 Pompeiopolis
 Pompelo
 Pomponiana
+Pomptina
 Pomptinae
 Pomptinus
 Ponione
@@ -16655,6 +16606,7 @@ Ptrensibus
 Ptychia
 Publicae
 Publicanos
+Publilia
 Publilianum
 Publius
 Pucinum
@@ -16787,6 +16739,7 @@ Quinto
 Quintum
 Quintumdecimum
 Quiricus
+Quirina
 Quiza
 Qumis
 Rabanitai
@@ -16822,6 +16775,7 @@ Ramesses
 Ramidava
 Ramingos
 Ramista
+Ramnes
 Rampiana
 Randanum
 Rani
@@ -17095,6 +17049,7 @@ Romana
 Romanorum
 Romanus
 Romechium
+Romilia
 Romula
 Romulea
 Romuliana
@@ -17218,6 +17173,7 @@ Sabata
 Sabate
 Sabatha
 Sabatia
+Sabatina
 Sabatinca
 Sabatini
 Sabatinus
@@ -17369,7 +17325,6 @@ Salamas
 Salambriai
 Salamias
 Salaminiae
-Salaminiakos
 Salamis
 Salamiton
 Salanda
@@ -18151,6 +18106,7 @@ Serenus
 Seressi
 Seretion
 Sergetion
+Sergia
 Sergioupolis
 Seria
 Seriane
@@ -18538,7 +18494,6 @@ Siphrios
 Sipia
 Sipilen
 Sipontum
-Sipous
 Sippar
 Sippara
 Sipphara
@@ -18632,7 +18587,6 @@ Skablaioi
 Skalatenoi
 Skamandreia
 Skamandros
-Skambonidai
 Skanda
 Skandeia
 Skandeis
@@ -18643,7 +18597,6 @@ Skaphaliai
 Skaphe
 Skapitanoi
 Skapsa
-Skapte
 Skaptes
 Skardon
 Skariotasaloukra
@@ -18985,7 +18938,6 @@ Sphairia
 Sphakteria
 Sphekeia
 Sphendale
-Sphettos
 Sphorakene
 Spibyros
 Spiclin
@@ -19051,6 +19003,7 @@ Steiris
 Stektorion
 Stelai
 Stellas
+Stellatina
 Stena
 Stenae
 Stenarum
@@ -19171,6 +19124,7 @@ Subtabarti
 Sububa
 Sububus
 Subur
+Suburana
 Suburbanus
 Suburbures
 Suburburum
@@ -19181,6 +19135,7 @@ Sucaelo
 Succeiano
 Succorum
 Succosa
+Succusana
 Sucia
 Sucidava
 Sucro
@@ -19756,7 +19711,6 @@ Tawwaj
 Taxarias
 Taxian
 Taxiana
-Taxila
 Taxilae
 Taya
 Taygetos
@@ -19918,6 +19872,7 @@ Terebinthodes
 Teredon
 Tereia
 Terenouthis
+Teretina
 Tergendum
 Tergeste
 Tergestinus
@@ -20096,7 +20051,6 @@ Thateso
 Thaubasio
 Thaumakia
 Thaumakie
-Thaumakoi
 Thaumasion
 Thaumaston
 Thauri
@@ -20234,7 +20188,6 @@ Thesmophorion
 Thesmophorou
 Thespiai
 Thespites
-Thesprotia
 Thessalia
 Thessaliotis
 Thessalonica
@@ -20301,7 +20254,6 @@ Thio
 Thiolla
 Thiounta
 This
-Thisbe
 Thisiduo
 Thisitana
 Thisoa
@@ -20342,7 +20294,6 @@ Thone
 Thonis
 Thorai
 Thorax
-Thorikos
 Thornax
 Thornia
 Thosbis
@@ -20371,7 +20322,6 @@ Thrasymos
 Thraustos
 Thremitus
 Threx
-Thria
 Thriare
 Thriasion
 Thrious
@@ -20415,7 +20365,6 @@ Thybarna
 Thybris
 Thyessos
 Thyia
-Thymaitadai
 Thymbra
 Thymbrara
 Thymbras
@@ -20621,6 +20570,7 @@ Titiakos
 Titiana
 Titianoi
 Titianos
+Tities
 Tition
 Titioupolis
 Titius
@@ -20971,6 +20921,7 @@ Triumphale
 Triumphalis
 Trivici
 Troas
+Trocmi
 Troesmis
 Trofimianensis
 Trogiliai
@@ -20990,9 +20941,9 @@ Troilum
 Troizen
 Troizenia
 Troketta
-Trokmoi
 Trokna
 Trokondenon
+Tromentina
 Tronbolianoi
 Tronis
 Trono
@@ -21484,7 +21435,6 @@ Vastauna
 Vatari
 Vatia
 Vaticanum
-Vatl
 Vatreni
 Vatrenus
 Vatrute
@@ -21503,13 +21453,13 @@ Veh
 Veii
 Veiturii
 Velabri
-Velathri
 Veldidena
 Velefi
 Veleia
 Veleiates
 Velia
 Velienses
+Velina
 Velinae
 Velini
 Veliocasses
@@ -21824,6 +21774,7 @@ Vologesias
 Volsci
 Volsiniensis
 Volsinii
+Voltinia
 Voltumnae
 Voltur
 Volturnum
@@ -21849,6 +21800,7 @@ Vosidum
 Vosolvia
 Votodrones
 Voturi
+Voturia
 Vulcania
 Vulcanius
 Vulci
@@ -21949,7 +21901,6 @@ Zamareni
 Zamarthas
 Zamnes
 Zamucii
-Zancle
 Zanes
 Zangenai
 Zankle
@@ -22036,7 +21987,6 @@ Zeucharis
 Zeugei
 Zeugitana
 Zeugma
-Zeugmatos
 Zeus
 Zia
 Ziata
