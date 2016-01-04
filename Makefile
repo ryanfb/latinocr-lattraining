@@ -5,6 +5,7 @@ UTFSRC = tools/libutf/rune.c tools/libutf/utf.c
 
 PERSEUS_CORPUS_GIT_URL = https://github.com/PerseusDL/canonical-greekLit
 PERSEUS_CORPUS_GIT_COMMIT = 433bee94d51c0bd147e1a39513fde622d542a49e
+CLTK_LATIN_PROPER_NAMES_COMMIT = 771c9fb50c82e73a2287499905a8a8577643b2ce
 
 OPENGREEKANDLATIN_REPOS = \
 	csel-dev \
@@ -51,7 +52,7 @@ lat.perseus.word.txt: tools/wordlistparseword.sh wordlist.perseus
 	tools/wordlistparseword.sh < wordlist.perseus > $@
 
 lat.cltk.names.txt:
-	curl 'https://raw.githubusercontent.com/cltk/latin_proper_names_cltk/master/proper_names.txt' | grep -v _ > $@
+	curl 'https://raw.githubusercontent.com/cltk/latin_proper_names_cltk/$(CLTK_LATIN_PROPER_NAMES_COMMIT)/proper_names.txt' | grep -v _ > $@
 
 lat.wordlist: lat.perseus.word.txt lat.rigaudon.word.txt lat.pleiades.word.txt lat.cltk.names.txt
 	LC_ALL=C cat $^ | sort | uniq | perl -ane '{ if(!m/[[:^ascii:]]/) { print  } }' > $@
