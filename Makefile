@@ -17,7 +17,7 @@ all: lat.training_text lat.training_text.unigram_freqs lat.wordlist
 corpus:
 	rm -rf corpus
 	git clone $(PERSEUS_CORPUS_GIT_URL) corpus
-	cd corpus && git checkout $(PERSEUS_CORPUS_GIT_URL)
+	cd corpus && git checkout $(PERSEUS_CORPUS_GIT_COMMIT)
 
 opengreekandlatin:
 	mkdir -p $@
